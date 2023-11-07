@@ -25,8 +25,9 @@ plt.xlabel('Frequency (MHz)')
 plt.ylabel('Relative power (dB)')
 
 show()
-#f, t, Sxx = signal.spectrogram(samples, fs=sample_rate, window=np.hamming(2048), nperseg=2048, noverlap=1536, scaling="spectrum", mode="magnitude")
-#pcolormesh(t, f, 20*np.log10(Sxx))
+f, t, Sxx = signal.spectrogram(samples, fs=sample_rate, window=np.hamming(2048), nperseg=2048, noverlap=1536, scaling="spectrum", mode="magnitude")
+sf = f + center_freq
+pcolormesh(t, sf, 20*np.log10(Sxx))
 
-#show()
+show()
 #print("siema")
